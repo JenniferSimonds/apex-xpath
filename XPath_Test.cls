@@ -398,18 +398,20 @@ private class XPath_Test {
 		XPath xp = new XPath(xml);
 
 		Dom.XmlNode actualNodeRel = xp.findFirst('b/c/d');
-		System.assertEquals('great-grandchild 1', actualNodeRel.getText());
-
 		Dom.XmlNode actualNodeAbs = xp.findFirst('/a/b/c/d');
+
+		System.assertEquals('great-grandchild 1', actualNodeRel.getText());
 		System.assertEquals('great-grandchild 1', actualNodeAbs.getText());
 	}
 
 
+	// A wildcard tagname should pick up all immediate child elements.
 	@isTest static void test_tagname_star() {
 		String xml =
 '<a>\n' +
 '	<b1>child 1</b1>\n' +
 '	<b2>odd man out</b2>\n' +
+'	<!-- a comment -->\n' +
 '	<b1>child 2</b1>\n' +
 '</a>';
 
@@ -668,9 +670,9 @@ private class XPath_Test {
 		XPath xp = new XPath(xml);
 
 		String actualTextRel = xp.getText('b/c/d');
-		System.assertEquals('great-grandchild 1', actualTextRel);
-
 		String actualTextAbs = xp.getText('/a/b/c/d');
+
+		System.assertEquals('great-grandchild 1', actualTextRel);
 		System.assertEquals('great-grandchild 1', actualTextAbs);
 	}
 
@@ -710,9 +712,11 @@ private class XPath_Test {
 		XPath xp = new XPath(xml);
 
 		String[] actualTextRel = xp.getTextList('b/c/d');
-		System.assertEquals('great-grandchild 1', actualTextRel[0]);
-
 		String[] actualTextAbs = xp.getTextList('/a/b/c/d');
+
+		System.assert(actualTextRel.size() == 2);
+		System.assertEquals('great-grandchild 1', actualTextRel[0]);
+		System.assert(actualTextAbs.size() == 2);
 		System.assertEquals('great-grandchild 1', actualTextAbs[0]);
 	}
 
@@ -766,10 +770,10 @@ private class XPath_Test {
 
 		XPath xp = new XPath(xml);
 
-		String[] actualTextRel = xp.getText(',', 'b/c/d');
-		System.assertEquals('great-grandchild 1,great-grandchild 2', actualTextRel[0]);
+		String actualTextRel = xp.getText(',', 'b/c/d');
+		String actualTextAbs = xp.getText(',', '/a/b/c/d');
 
-		String[] actualTextAbs = xp.getText(',', '/a/b/c/d');
-		System.assertEquals('great-grandchild 1,great-grandchild 2', actualTextAbs[0]);
+		System.assertEquals('great-grandchild 1,great-grandchild 2', actualTextRel);
+		System.assertEquals('great-grandchild 1,great-grandchild 2', actualTextAbs);
 	}
 }
