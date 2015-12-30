@@ -1,3 +1,11 @@
+/**
+ * Unit tests for XPath.cls
+ *
+ * @author     Jennifer Simonds <jennysimonds@gmail.com>
+ * @version    1.0.0
+ * @copyright  2015 Jennifer Simonds
+ * @license    MIT License http://opensource.org/licenses/MIT
+ */
 @isTest
 private class XPath_Test {
 
