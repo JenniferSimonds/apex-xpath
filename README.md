@@ -85,3 +85,11 @@ Returns the string contents of all the nodes that are described by the path, sep
 **`String[] getTextList (Dom.XmlNode start, String path)`**
 
 Returns the string contents of all the nodes that are described by the path, in a List.
+
+##Submitting Pull Requests
+If you've fixed a bug or came up with a great addition to the API, I welcome your code submissions! To make things smoother, please follow these guidelines:
+
+- Create an Issue for the bug you're fixing or feature you're adding, if there isn't one already. This is especially important if you're adding a new feature or changing the API - the userbase needs to be able to discuss it first!
+- If someone is proposing a new feature or a change to the existing API, please chime in in the comments for that issue. It's important that the library evolves in a way that the userbase feels is useful and straightforward to use.
+- The default branch to submit pull requests to will normally be the current version under development. We'll try to release updates to Master in a controlled manner.
+- So far the project's coding conventions are rather straightforward: K&R bracing (only because it's so ubiquitous, not because it's any good!). Use the short form when declaring Lists. For each new method, write a comment block with a short description of what it does, what its parameters mean and their defaults, what it returns, and any caveats/gotchas/assumptions that the caller should know about. If you're updating a method please review the comment block & update it if appropriate.
