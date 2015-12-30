@@ -36,9 +36,10 @@
  *         String activationId = xp.getText(lineItem, 'activationId/id');
  *     }
  *
- * @author Jennifer Simonds <jennysimonds@gmail.com>
- * @version 1.0.0
- * @since 2015-12-29
+ * @author     Jennifer Simonds <jennysimonds@gmail.com>
+ * @version    1.0.0
+ * @copyright  2015 Jennifer Simonds
+ * @license    MIT License http://opensource.org/licenses/MIT
  */
 public class XPath
 {
