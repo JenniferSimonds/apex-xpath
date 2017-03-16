@@ -86,7 +86,7 @@ Returns the string contents of all the nodes that are described by the path, sep
 
 Returns the string contents of all the nodes that are described by the path, in a List.
 
-##Submitting Pull Requests
+## Submitting Pull Requests
 If you've fixed a bug or came up with a great addition to the API, I welcome your code submissions! To make things smoother, please follow these guidelines:
 
 - Create an Issue for the bug you're fixing or feature you're adding, if there isn't one already. This is especially important if you're adding a new feature or changing the API - the userbase needs to be able to discuss it first!
